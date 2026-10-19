@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservation | Recipe Secrets Restaurant</title>
+<meta name="description" content="Book a table at Recipe Secrets Restaurant. Choose your date, time, and party size, and we'll take care of the rest.">
+<meta property="og:title" content="Reservation | Recipe Secrets Restaurant">
+<meta property="og:description" content="Book a table at Recipe Secrets Restaurant.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1200&q=80">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Recipe <span>Secrets</span></a>
+    <nav class="nav" id="site-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="specials.html">Specials</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="reservation.html" class="btn btn--primary btn--small">Book Now</a>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="hero__bg" style="background-image:url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1600&q=80');" role="img" aria-label="Table set for a reservation at Recipe Secrets Restaurant"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <h1>Reserve a Table</h1>
+      <p>Tell us when you're coming and we'll have a table ready.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-layout">
+
+      <div class="form-card reveal">
+        <div class="form-success" role="status">Thank you! Your reservation request has been received &mdash; we'll confirm by email shortly.</div>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-validate novalidate>
+          <div class="form-row--split">
+            <div class="form-row">
+              <label for="res-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="res-name" name="name" required autocomplete="name">
+              <p class="field-error">Please enter your name.</p>
+            </div>
+            <div class="form-row">
+              <label for="res-email">Email <span class="required">*</span></label>
+              <input type="email" id="res-email" name="email" required autocomplete="email">
+              <p class="field-error">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div class="form-row--split">
+            <div class="form-row">
+              <label for="res-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="res-phone" name="phone" required autocomplete="tel">
+              <p class="field-error">Please enter your phone number.</p>
+            </div>
+            <div class="form-row">
+              <label for="res-guests">Number of Guests <span class="required">*</span></label>
+              <select id="res-guests" name="guests" required>
+                <option value="">Select&hellip;</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+                <option>9</option><option>10</option><option>11</option><option>12</option>
+              </select>
+              <p class="field-error">Please select a party size.</p>
+            </div>
+          </div>
+
+          <div class="form-row--split">
+            <div class="form-row">
+              <label for="res-date">Date <span class="required">*</span></label>
+              <input type="date" id="res-date" name="date" required>
+              <p class="field-error">Please choose a valid, upcoming date.</p>
+            </div>
+            <div class="form-row">
+              <label for="res-time">Time <span class="required">*</span></label>
+              <input type="time" id="res-time" name="time" required>
+              <p class="field-error">Please choose a time.</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="res-occasion">Occasion</label>
+            <select id="res-occasion" name="occasion">
+              <option value="">None in particular</option>
+              <option>Birthday</option>
+              <option>Anniversary</option>
+              <option>Business Dinner</option>
+              <option>Date Night</option>
+              <option>Celebration</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="res-requests">Special Requests</label>
+            <textarea id="res-requests" name="requests" placeholder="Allergies, seating preference, celebration details&hellip;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">Request Reservation</button>
+        </form>
+      </div>
+
+      <aside class="side-panel reveal">
+        <h3>Opening Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday &ndash; Thursday</td><td>[HOURS]</td></tr>
+          <tr><td>Friday &ndash; Saturday</td><td>[HOURS]</td></tr>
+          <tr><td>Sunday</td><td>[HOURS]</td></tr>
+        </table>
+        <h3>Reservation Policy</h3>
+        <p>Tables are held for 15 minutes past the reserved time. Reservations for parties of 8 or more require a credit card to hold the booking. Cancellations should be made at least 2 hours in advance.</p>
+        <h3>Large Groups</h3>
+        <p>Planning a party of 13 or more? Call us directly to arrange a custom setup.</p>
+        <p><a href="tel:[PHONE]">[PHONE]</a></p>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Recipe Secrets</a>
+        <p>Seasonal, ingredient-driven comfort food in a warm, welcoming dining room.</p>
+        <div class="footer-social">
+          <a href="[SOCIAL LINKS]" aria-label="Instagram">IG</a>
+          <a href="[SOCIAL LINKS]" aria-label="Facebook">FB</a>
+          <a href="[SOCIAL LINKS]" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>[HOURS]</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>[ADDRESS]<br>[PHONE]<br>[EMAIL]</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Recipe Secrets Restaurant. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
