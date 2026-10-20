@@ -1,4 +1,4 @@
-// Recipe Secrets Restaurant — shared behavior
+// Andrews Recipe Secrets Restaurant — shared behavior
 
 (function () {
   "use strict";
@@ -9,16 +9,33 @@
     var nav = document.querySelector(".nav");
     if (!toggle || !nav) return;
 
-    toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
+    function setOpen(isOpen) {
+      nav.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("nav-open", isOpen);
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(!nav.classList.contains("is-open"));
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        setOpen(false);
       });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(event.target) || toggle.contains(event.target)) return;
+      setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        setOpen(false);
+        toggle.focus();
+      }
     });
   }
 
